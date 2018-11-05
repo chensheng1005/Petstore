@@ -3,53 +3,83 @@ package com.nf147.entity;
 import java.math.BigDecimal;
 
 public class Pet {
-    private Integer pet_id;
+    private Integer petId;
 
-    private Integer category_id;
+    private Integer categoryId;
 
-    private String pet_name;
+    private String petName;
 
-    private BigDecimal pet_price;
+    private BigDecimal petPrice;
 
-    private String pet_status;
+    private String tagName;
 
-    public Integer getPet_id() {
-        return pet_id;
+    private String petStatus;
+
+    private String photo;
+
+    private Category category;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setPet_id(Integer pet_id) {
-        this.pet_id = pet_id;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public Integer getCategory_id() {
-        return category_id;
+    public Integer getPetId() {
+        return petId;
     }
 
-    public void setCategory_id(Integer category_id) {
-        this.category_id = category_id;
+    public void setPetId(Integer petId) {
+        this.petId = petId;
     }
 
-    public String getPet_name() {
-        return pet_name;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
-    public void setPet_name(String pet_name) {
-        this.pet_name = pet_name == null ? null : pet_name.trim();
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public BigDecimal getPet_price() {
-        return pet_price;
+    public String getPetName() {
+        return petName;
     }
 
-    public void setPet_price(BigDecimal pet_price) {
-        this.pet_price = pet_price;
+    public void setPetName(String petName) {
+        this.petName = petName == null ? null : petName.trim();
     }
 
-    public String getPet_status() {
-        return pet_status;
+    public BigDecimal getPetPrice() {
+        return petPrice;
     }
 
-    public void setPet_status(String pet_status) {
-        this.pet_status = pet_status == null ? null : pet_status.trim();
+    public void setPetPrice(BigDecimal petPrice) {
+        this.petPrice = petPrice;
+    }
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName == null ? null : tagName.trim();
+    }
+
+    public String getPetStatus() {
+        return petStatus;
+    }
+
+    public void setPetStatus(String petStatus) {
+        this.petStatus = petStatus == null ? null : petStatus.trim();
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo == null ? null : photo.trim();
     }
 }

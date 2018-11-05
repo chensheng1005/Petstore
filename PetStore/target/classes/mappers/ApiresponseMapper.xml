@@ -2,30 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nf147.dao.ApiresponseMapper">
   <resultMap id="BaseResultMap" type="com.nf147.entity.Apiresponse">
-    <id column="apiResponse_code" jdbcType="INTEGER" property="apiResponse_code" />
-    <result column="apiResponse_type" jdbcType="VARCHAR" property="apiResponse_type" />
-    <result column="apiResponse_message" jdbcType="VARCHAR" property="apiResponse_message" />
+    <id column="apiResponse_code" jdbcType="INTEGER" property="apiresponseCode" />
+    <result column="apiResponse_type" jdbcType="VARCHAR" property="apiresponseType" />
+    <result column="apiResponse_message" jdbcType="VARCHAR" property="apiresponseMessage" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from apiresponse
-    where apiResponse_code = #{apiResponse_code,jdbcType=INTEGER}
+    where apiResponse_code = #{apiresponseCode,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.nf147.entity.Apiresponse">
     insert into apiresponse (apiResponse_code, apiResponse_type, 
       apiResponse_message)
-    values (#{apiResponse_code,jdbcType=INTEGER}, #{apiResponse_type,jdbcType=VARCHAR}, 
-      #{apiResponse_message,jdbcType=VARCHAR})
+    values (#{apiresponseCode,jdbcType=INTEGER}, #{apiresponseType,jdbcType=VARCHAR}, 
+      #{apiresponseMessage,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.nf147.entity.Apiresponse">
     update apiresponse
-    set apiResponse_type = #{apiResponse_type,jdbcType=VARCHAR},
-      apiResponse_message = #{apiResponse_message,jdbcType=VARCHAR}
-    where apiResponse_code = #{apiResponse_code,jdbcType=INTEGER}
+    set apiResponse_type = #{apiresponseType,jdbcType=VARCHAR},
+      apiResponse_message = #{apiresponseMessage,jdbcType=VARCHAR}
+    where apiResponse_code = #{apiresponseCode,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select apiResponse_code, apiResponse_type, apiResponse_message
     from apiresponse
-    where apiResponse_code = #{apiResponse_code,jdbcType=INTEGER}
+    where apiResponse_code = #{apiresponseCode,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select apiResponse_code, apiResponse_type, apiResponse_message

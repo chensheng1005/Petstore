@@ -4,11 +4,11 @@ import com.nf147.entity.Apiresponse;
 import java.util.List;
 
 public interface ApiresponseMapper {
-    int deleteByPrimaryKey(Integer apiResponse_code);
+    int deleteByPrimaryKey(Integer apiresponseCode);
 
     int insert(Apiresponse record);
 
-    Apiresponse selectByPrimaryKey(Integer apiResponse_code);
+    Apiresponse selectByPrimaryKey(Integer apiresponseCode);
 
     List<Apiresponse> selectAll();
 

@@ -6,22 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import sun.awt.ModalityListener;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
-import javax.websocket.Session;
 
 @Controller
 public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @RequestMapping("/index")
-    public String index(){
+    @RequestMapping("/go")
+    public String login(){
         return "login";
     }
 
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
 
     @PostMapping("/addUser")
     public String addUser(User user){
@@ -29,13 +30,18 @@ public class UserController {
         return "";
     }
 
-    @GetMapping("/login")
+    @GetMapping(value = "/login",produces = "application/json;charset=utf-8")
+    @ResponseBody
     public String login(String username, String password, HttpServletRequest request){
         int a = userMapper.login(username,password);
-        request.getSession().setAttribute("username",username);
-        if(a>0) return "";
-        else return "";
+        if(a>0) {
+            request.getSession().setAttribute("username",username);
+            return "{\"msg\":\"ok\"}";
+        }
+        else
+            return "{\"msg\":\"no\"}";
     }
+
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){

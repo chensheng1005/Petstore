@@ -4,11 +4,11 @@ import com.nf147.entity.Category;
 import java.util.List;
 
 public interface CategoryMapper {
-    int deleteByPrimaryKey(Integer category_id);
+    int deleteByPrimaryKey(Integer categoryId);
 
     int insert(Category record);
 
-    Category selectByPrimaryKey(Integer category_id);
+    Category selectByPrimaryKey(Integer categoryId);
 
     List<Category> selectAll();
 

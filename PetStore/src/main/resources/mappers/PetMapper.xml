@@ -2,42 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nf147.dao.PetMapper">
   <resultMap id="BaseResultMap" type="com.nf147.entity.Pet">
-    <id column="pet_id" jdbcType="INTEGER" property="pet_id" />
-    <result column="category_id" jdbcType="INTEGER" property="category_id" />
-    <result column="pet_name" jdbcType="VARCHAR" property="pet_name" />
-    <result column="pet_price" jdbcType="DECIMAL" property="pet_price" />
-    <result column="pet_status" jdbcType="VARCHAR" property="pet_status" />
+    <id column="pet_id" jdbcType="INTEGER" property="petId" />
+    <result column="category_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="pet_name" jdbcType="VARCHAR" property="petName" />
+    <result column="pet_price" jdbcType="DECIMAL" property="petPrice" />
+    <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
+    <result column="pet_status" jdbcType="VARCHAR" property="petStatus" />
+    <result column="photo" jdbcType="VARCHAR" property="photo" />
+
+    <association property="category" resultMap="categoryResultMap"></association>
+  </resultMap>
+
+  <resultMap id="categoryResultMap" type="com.nf147.entity.Category">
+    <id column="category_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="category_name" jdbcType="VARCHAR" property="categoryName" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from pet
-    where pet_id = #{pet_id,jdbcType=INTEGER}
+    where pet_id = #{petId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.nf147.entity.Pet">
     insert into pet (pet_id, category_id, pet_name, 
-      pet_price, pet_status)
-    values (#{pet_id,jdbcType=INTEGER}, #{category_id,jdbcType=INTEGER}, #{pet_name,jdbcType=VARCHAR}, 
-      #{pet_price,jdbcType=DECIMAL}, #{pet_status,jdbcType=VARCHAR})
+      pet_price, tag_name, pet_status, 
+      photo)
+    values (#{petId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{petName,jdbcType=VARCHAR}, 
+      #{petPrice,jdbcType=DECIMAL}, #{tagName,jdbcType=VARCHAR}, #{petStatus,jdbcType=VARCHAR}, 
+      #{photo,jdbcType=VARCHAR})
   </insert>
+
   <update id="updateByPrimaryKey" parameterType="com.nf147.entity.Pet">
     update pet
-    set category_id = #{category_id,jdbcType=INTEGER},
-      pet_name = #{pet_name,jdbcType=VARCHAR},
-      pet_price = #{pet_price,jdbcType=DECIMAL},
-      pet_status = #{pet_status,jdbcType=VARCHAR}
-    where pet_id = #{pet_id,jdbcType=INTEGER}
+    set category_id = #{categoryId,jdbcType=INTEGER},
+      pet_name = #{petName,jdbcType=VARCHAR},
+      pet_price = #{petPrice,jdbcType=DECIMAL},
+      tag_name = #{tagName,jdbcType=VARCHAR},
+      pet_status = #{petStatus,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=VARCHAR}
+    where pet_id = #{petId,jdbcType=INTEGER}
   </update>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select pet_id, category_id, pet_name, pet_price, pet_status
+    select pet_id, category_id, pet_name, pet_price, tag_name, pet_status, photo
     from pet
-    where pet_id = #{pet_id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select pet_id, category_id, pet_name, pet_price, pet_status
-    from pet
+    where pet_id = #{petId,jdbcType=INTEGER}
   </select>
 
-  <select id="select_findByStatus" parameterType="String">
-    select pet_id, category_id, pet_name, pet_price, pet_status
-    from pet where pet_status = #{pet_status,jdbcType=VARCHAR}
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from pet p inner join category c on
+    p.category_id = c.category_id
   </select>
 </mapper>

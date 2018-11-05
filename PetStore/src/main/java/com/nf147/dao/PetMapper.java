@@ -4,15 +4,15 @@ import com.nf147.entity.Pet;
 import java.util.List;
 
 public interface PetMapper {
-    int deleteByPrimaryKey(Integer pet_id);
+    int deleteByPrimaryKey(Integer petId);
 
     int insert(Pet record);
 
-    Pet selectByPrimaryKey(Integer pet_id);
+    Pet selectByPrimaryKey(Integer petId);
 
     List<Pet> selectAll();
 
     int updateByPrimaryKey(Pet record);
 
-    List<Pet> select_findByStatus(String pet_status);
+    List<Pet> select_findByStatus(String status);
 }

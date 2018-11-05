@@ -1,83 +1,83 @@
 package com.nf147.entity;
 
 public class User {
-    private Integer user_id;
+    private Integer userId;
 
-    private String user_name;
+    private String userName;
 
-    private String user_first_name;
+    private String userFirstName;
 
-    private String user_last_name;
+    private String userLastName;
 
-    private String user_email;
+    private String userEmail;
 
-    private String user_password;
+    private String userPassword;
 
-    private String user_phone;
+    private String userPhone;
 
-    private Integer user_status;
+    private Integer userStatus;
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name == null ? null : user_name.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getUser_first_name() {
-        return user_first_name;
+    public String getUserFirstName() {
+        return userFirstName;
     }
 
-    public void setUser_first_name(String user_first_name) {
-        this.user_first_name = user_first_name == null ? null : user_first_name.trim();
+    public void setUserFirstName(String userFirstName) {
+        this.userFirstName = userFirstName == null ? null : userFirstName.trim();
     }
 
-    public String getUser_last_name() {
-        return user_last_name;
+    public String getUserLastName() {
+        return userLastName;
     }
 
-    public void setUser_last_name(String user_last_name) {
-        this.user_last_name = user_last_name == null ? null : user_last_name.trim();
+    public void setUserLastName(String userLastName) {
+        this.userLastName = userLastName == null ? null : userLastName.trim();
     }
 
-    public String getUser_email() {
-        return user_email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUser_email(String user_email) {
-        this.user_email = user_email == null ? null : user_email.trim();
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail == null ? null : userEmail.trim();
     }
 
-    public String getUser_password() {
-        return user_password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setUser_password(String user_password) {
-        this.user_password = user_password == null ? null : user_password.trim();
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword == null ? null : userPassword.trim();
     }
 
-    public String getUser_phone() {
-        return user_phone;
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    public void setUser_phone(String user_phone) {
-        this.user_phone = user_phone == null ? null : user_phone.trim();
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone == null ? null : userPhone.trim();
     }
 
-    public Integer getUser_status() {
-        return user_status;
+    public Integer getUserStatus() {
+        return userStatus;
     }
 
-    public void setUser_status(Integer user_status) {
-        this.user_status = user_status;
+    public void setUserStatus(Integer userStatus) {
+        this.userStatus = userStatus;
     }
 }

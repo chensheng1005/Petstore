@@ -1,73 +1,73 @@
 package com.nf147.entity;
 
 public class Order {
-    private Integer order_id;
+    private Integer orderId;
 
-    private Integer pet_id;
+    private Integer petId;
 
-    private Integer user_id;
+    private Integer userId;
 
-    private Integer order_quantity;
+    private Integer orderQuantity;
 
-    private String order_shipDate;
+    private String orderShipdate;
 
-    private String order_status;
+    private String orderStatus;
 
-    private byte[] order_complete;
+    private byte[] orderComplete;
 
-    public Integer getOrder_id() {
-        return order_id;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(Integer order_id) {
-        this.order_id = order_id;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
-    public Integer getPet_id() {
-        return pet_id;
+    public Integer getPetId() {
+        return petId;
     }
 
-    public void setPet_id(Integer pet_id) {
-        this.pet_id = pet_id;
+    public void setPetId(Integer petId) {
+        this.petId = petId;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getOrder_quantity() {
-        return order_quantity;
+    public Integer getOrderQuantity() {
+        return orderQuantity;
     }
 
-    public void setOrder_quantity(Integer order_quantity) {
-        this.order_quantity = order_quantity;
+    public void setOrderQuantity(Integer orderQuantity) {
+        this.orderQuantity = orderQuantity;
     }
 
-    public String getOrder_shipDate() {
-        return order_shipDate;
+    public String getOrderShipdate() {
+        return orderShipdate;
     }
 
-    public void setOrder_shipDate(String order_shipDate) {
-        this.order_shipDate = order_shipDate == null ? null : order_shipDate.trim();
+    public void setOrderShipdate(String orderShipdate) {
+        this.orderShipdate = orderShipdate == null ? null : orderShipdate.trim();
     }
 
-    public String getOrder_status() {
-        return order_status;
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setOrder_status(String order_status) {
-        this.order_status = order_status == null ? null : order_status.trim();
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus == null ? null : orderStatus.trim();
     }
 
-    public byte[] getOrder_complete() {
-        return order_complete;
+    public byte[] getOrderComplete() {
+        return orderComplete;
     }
 
-    public void setOrder_complete(byte[] order_complete) {
-        this.order_complete = order_complete;
+    public void setOrderComplete(byte[] orderComplete) {
+        this.orderComplete = orderComplete;
     }
 }

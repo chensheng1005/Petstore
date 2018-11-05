@@ -30,7 +30,8 @@
         </javaClientGenerator>
 
         <table tableName="%">
-            <property name="useActualColumnNames" value="true"/>
+            <!-- false:驼峰命名-->
+            <property name="useActualColumnNames" value="false"/>
         </table>
     </context>
 </generatorConfiguration>

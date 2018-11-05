@@ -1,33 +1,33 @@
 package com.nf147.entity;
 
 public class Apiresponse {
-    private Integer apiResponse_code;
+    private Integer apiresponseCode;
 
-    private String apiResponse_type;
+    private String apiresponseType;
 
-    private String apiResponse_message;
+    private String apiresponseMessage;
 
-    public Integer getApiResponse_code() {
-        return apiResponse_code;
+    public Integer getApiresponseCode() {
+        return apiresponseCode;
     }
 
-    public void setApiResponse_code(Integer apiResponse_code) {
-        this.apiResponse_code = apiResponse_code;
+    public void setApiresponseCode(Integer apiresponseCode) {
+        this.apiresponseCode = apiresponseCode;
     }
 
-    public String getApiResponse_type() {
-        return apiResponse_type;
+    public String getApiresponseType() {
+        return apiresponseType;
     }
 
-    public void setApiResponse_type(String apiResponse_type) {
-        this.apiResponse_type = apiResponse_type == null ? null : apiResponse_type.trim();
+    public void setApiresponseType(String apiresponseType) {
+        this.apiresponseType = apiresponseType == null ? null : apiresponseType.trim();
     }
 
-    public String getApiResponse_message() {
-        return apiResponse_message;
+    public String getApiresponseMessage() {
+        return apiresponseMessage;
     }
 
-    public void setApiResponse_message(String apiResponse_message) {
-        this.apiResponse_message = apiResponse_message == null ? null : apiResponse_message.trim();
+    public void setApiresponseMessage(String apiresponseMessage) {
+        this.apiresponseMessage = apiresponseMessage == null ? null : apiresponseMessage.trim();
     }
 }

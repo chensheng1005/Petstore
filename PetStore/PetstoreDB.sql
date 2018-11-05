@@ -12,9 +12,12 @@ create table `User`(
 	user_status int
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 insert into `User`(user_name,user_first_name,user_last_name,user_email,user_password,user_phone,user_status) values
-('郭富城','富城','郭','2934293423@qq.com','123456','15093482349',0),
+('admin','富城','郭','2934293423@qq.com','123456','15093482349',0),
 ('刘德华','德华','刘','9234213623@qq.com','123456','13393482349',0);
 select*from `User`;
+
+select count(*) from `User` where user_name = 'admin' and user_password = '123456';
+
 
 create table Category( 	# 类型
 	category_id int primary key auto_increment,
@@ -29,40 +32,19 @@ create table Pet(
 	category_id int references Category(category_id),
 	pet_name varchar(50),
 	pet_price decimal(9,2),
-	pet_status enum('可用','待定','已售出')
+	tag_name varchar(20),
+	pet_status enum('可用','待定','已售出'),
+	`photo` varchar(255)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-insert into Pet(category_id,pet_name,pet_price,pet_status) values
-(1,'哈士奇',1200,'可用'),
-(1,'茶杯犬',1000,'可用'),
-(1,'藏獒',4000,'待定'),
-(2,'波斯猫',2000,'可用'),
-(3,'金鱼',10,'已售出');
+
+insert into Pet(category_id,pet_name,pet_price,tag_name,pet_status,`photo`) values
+(1,'哈士奇',1200,'可爱','可用','1.jpg'),
+(1,'茶杯犬',1000,'可爱','可用','2.jpg'),
+(1,'藏獒',4000,'可爱','待定','3.jpg'),
+(2,'波斯猫',2000,'可爱','可用','4.jpg'),
+(3,'金鱼',10,'可爱','已售出','5.jpg');
+
 select*from Pet;
-
-select p.pet_id, category_id, pet_name, pet_price, pet_status,t.tag_name,photo_name from 
-pet p inner join tag t on p.pet_id=t.pet_id
-inner join photo ph on p.pet_id=ph.pet_id;
-
-
-
-create table Photo(		# 图片
-	photo_id int primary key auto_increment,
-	photo_name varchar(100),
-	pet_id int references Pet(pet_id)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-insert into Photo(photo_name,pet_id) values('1.jpg',1);
-insert into Photo(photo_name,pet_id) values('2.jpg',1);
-insert into Photo(photo_name,pet_id) values('3.jpg',2);
-select*from photo;
-
-create table Tag(			# 标签
-	tag_id int primary key auto_increment,
-	tag_name varchar(50),
-	pet_id int references Pet(pet_id)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-insert into Tag(tag_name,pet_id) values
-('可爱',1),('讨人喜欢',2),('凶猛',3);
-select*from tag;
 
 create table `Order`(
 	order_id int primary key auto_increment,
@@ -79,7 +61,6 @@ insert into `Order`(pet_id,user_id,order_quantity,order_shipDate,order_status,or
 (3,2,1,'2017-11-10','放置',false);
 select*from `Order`;
 
-drop table inventories;
 create table Inventories(
 	inventories_id int primary key auto_increment,
 	inventories_quantity int,

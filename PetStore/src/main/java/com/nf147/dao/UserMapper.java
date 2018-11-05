@@ -4,21 +4,21 @@ import com.nf147.entity.User;
 import java.util.List;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer user_id);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(User record);
 
-    User selectByPrimaryKey(Integer user_id);
+    User selectByPrimaryKey(Integer userId);
 
     List<User> selectAll();
 
     int updateByPrimaryKey(User record);
 
-    int login(String user,String password);
+    int login(String username,String password);
 
-    User selectName(String user_name);
+    User selectName(String username);
 
-    int updateByName(User record);
+    int updateByName(User user);
 
-    int deleteByName(String  user_name);
+    int deleteByName(String username);
 }
